@@ -1,0 +1,39 @@
+---
+title: "Codebook"
+author: "Manav Kumar"
+date: "February 25, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## CodeBook for "Getting and Cleaning Data" Course project
+
+```{r eval=TRUE,echo = FALSE,results='hide'}
+source("run_analysis.R")
+```
+
+The source data is obtained from 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+A full description of the Data can be obtained from:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+For this analysis, the data cleanup has been achieved by the script run_analysis.R
+
+* The training and test datasets are first individually loaded, joined with the subject and activity identifiers and tagged as "Train" or "Test" using obsType column
+* When selecting the data only the variables that are mean and standard deviations of the observations were loaded to individual subsets
+* The two datasets have been merged into a single dataset (activityData) using rbind
+* The fields are:
+
+```{r eval=TRUE,echo=TRUE}
+names(activityData)
+
+```
+
+
